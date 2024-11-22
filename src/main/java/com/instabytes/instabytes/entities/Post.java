@@ -1,13 +1,18 @@
-package com.instabytes.instabytes;
+package com.instabytes.instabytes.entities;
 
-import java.util.ArrayList;
-import java.util.List;
+//import java.util.List;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import jakarta.persistence.Id;
+
+@Document(collection = "posts")
 public class Post {
-    
+    @Id
     private long id;
     private String description;
     private String image;
+    //private List<Comment> comments;
     
     public Post(long id, String description, String image) {
         this.id = id;
@@ -61,16 +66,5 @@ public class Post {
         return true;
     }
 
-    public static void main(String[] args) {
-        List<Post> posts = new ArrayList<>();
-        posts.add(new Post(1, "Uma foto teste", "https://placecats.com/millie/300/150"));
-        posts.add(new Post(2, "Gato fazendo yoga", "https://placecats.com/millie/300/150"));
-        posts.add(new Post(3, "Gato fazendo panqueca", "https://placecats.com/millie/300/150"));
-
-        
-        for (Post post : posts) {
-            System.out.println(post.getDescription());
-        }
-    }
     
 }
