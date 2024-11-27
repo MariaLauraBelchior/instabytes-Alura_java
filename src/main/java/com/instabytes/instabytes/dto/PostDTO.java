@@ -6,7 +6,7 @@ import com.instabytes.instabytes.entities.Post;
 
 public class PostDTO {
     
-    private long id;
+    private String id;
     private String description;
     private String imgURL;
     
@@ -17,11 +17,11 @@ public class PostDTO {
         BeanUtils.copyProperties(entity, this);
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
