@@ -8,7 +8,7 @@ public class PostDTO {
     
     private long id;
     private String description;
-    private String image;
+    private String imgURL;
     
     public PostDTO() {
     }
@@ -33,12 +33,12 @@ public class PostDTO {
         this.description = description;
     }
 
-    public String getImage() {
-        return image;
+    public String getImgURL() {
+        return imgURL;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImgURL(String imgURL) {
+        this.imgURL = imgURL;
     }
 
     

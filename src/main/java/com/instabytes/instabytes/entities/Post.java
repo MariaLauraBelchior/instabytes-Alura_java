@@ -1,6 +1,6 @@
 package com.instabytes.instabytes.entities;
 
-//import java.util.List;
+import java.util.List;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,13 +11,16 @@ public class Post {
     @Id
     private long id;
     private String description;
-    private String image;
-    //private List<Comment> comments;
+    private String imgURL;
+    private List<Comment> comments;
+
+    public Post(){
+    }
     
-    public Post(long id, String description, String image) {
+    public Post(long id, String description, String imgURL, Comment comments) {
         this.id = id;
         this.description = description;
-        this.image = image;
+        this.imgURL = imgURL;
     }
 
     public long getId() {
@@ -36,13 +39,21 @@ public class Post {
         this.description = description;
     }
 
-    public String getImage() {
-        return image;
+    public String getImgURL() {
+        return imgURL;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImgURL(String imgURL) {
+        this.imgURL = imgURL;
     }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }  
 
     @Override
     public int hashCode() {
