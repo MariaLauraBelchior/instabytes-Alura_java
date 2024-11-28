@@ -1,23 +1,20 @@
-package com.instabytes.instabytes.entities;
+package com.instabytes.instabytes.dto;
 
-import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.beans.BeanUtils;
 
-import jakarta.persistence.Id;
+import com.instabytes.instabytes.entities.Comment;
 
-@Document(collation = "comments")
-public class Comment {
-    @Id
+public class CommentDTO {
+    
     private String id;
     private String text;
     private String author;
     
-    public Comment() {
+    public CommentDTO() {
     }
-    
-    public Comment(String id, String text, String author) {
-        this.id = id;
-        this.text = text;
-        this.author = author;
+
+    public CommentDTO(Comment entity) {
+        BeanUtils.copyProperties(entity, this);
     }
 
     public String getId() {
@@ -43,7 +40,6 @@ public class Comment {
     public void setAuthor(String author) {
         this.author = author;
     }
-
     
     
 }

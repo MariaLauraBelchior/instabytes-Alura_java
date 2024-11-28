@@ -1,5 +1,6 @@
 package com.instabytes.instabytes.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -12,7 +13,8 @@ public class Post {
     private String id;
     private String description;
     private String imgURL;
-    private List<Comment> comments;
+
+    private List<Comment> comments = new ArrayList<>();
 
     public Post(){
     }
