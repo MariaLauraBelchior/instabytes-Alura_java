@@ -1,8 +1,8 @@
 package com.instabytes.instabytes.entities;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.annotation.Id;
 
-import jakarta.persistence.Id;
 
 @Document(collation = "comments")
 public class Comment {
