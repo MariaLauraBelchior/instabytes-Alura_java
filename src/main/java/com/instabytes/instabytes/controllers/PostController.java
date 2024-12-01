@@ -6,6 +6,7 @@ import com.instabytes.instabytes.dto.CommentDTO;
 import com.instabytes.instabytes.dto.PostDTO;
 import com.instabytes.instabytes.services.PostService;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,5 +69,7 @@ public class PostController {
         List<CommentDTO> comments = postService.getComments(postId);
         return ResponseEntity.ok(comments);
     }
+
+    
 
 }

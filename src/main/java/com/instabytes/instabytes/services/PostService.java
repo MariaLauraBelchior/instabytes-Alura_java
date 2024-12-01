@@ -20,6 +20,7 @@ public class PostService {
     @Autowired
     private PostRepository postRepository;
 
+
     public PostDTO findById(String id) {
         Post post = postRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Post not found"));
@@ -83,6 +84,10 @@ public class PostService {
                     return dto;
                 })
                 .collect(Collectors.toList());
+    }
+
+    public Post savePost(Post post) {
+        return postRepository.save(post);
     }
 
 }

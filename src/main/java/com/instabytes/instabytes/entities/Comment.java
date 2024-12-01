@@ -1,5 +1,6 @@
 package com.instabytes.instabytes.entities;
 
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
 
@@ -10,6 +11,12 @@ public class Comment {
     private String id;
     private String text;
     private String author;
+
+    @DBRef
+    private Post post;
+    
+    @DBRef
+    private User user;
     
     public Comment() {
     }
@@ -42,6 +49,22 @@ public class Comment {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public Post getPost() {
+        return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     

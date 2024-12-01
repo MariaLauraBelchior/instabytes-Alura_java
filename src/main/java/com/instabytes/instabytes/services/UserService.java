@@ -36,5 +36,27 @@ public class UserService {
                 .map(UserDTO::new)
                 .collect(Collectors.toList());
     }
+
+    public UserDTO update(String id, UserDTO dto) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        BeanUtils.copyProperties(dto, user, "id");
+        user = userRepository.save(user);
+        return new UserDTO(user);
+    }
+
+    public void delete(String id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        userRepository.delete(user);
+    }
+
+    public User saveUser(User user) {
+        return userRepository.save(user);
+    }
+
+    public User getUserById(String id) {
+        return userRepository.findById(id).orElse(null);
+    }
     
 }

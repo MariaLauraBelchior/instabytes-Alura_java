@@ -1,5 +1,7 @@
 package com.instabytes.instabytes.dto;
 
+import java.util.List;
+
 import org.springframework.beans.BeanUtils;
 
 import com.instabytes.instabytes.entities.Post;
@@ -10,6 +12,9 @@ public class PostDTO {
     private String description;
     private String imgURL;
     
+    private List<CommentDTO> comments;
+
+
     public PostDTO() {
     }
 
@@ -41,5 +46,12 @@ public class PostDTO {
         this.imgURL = imgURL;
     }
 
+    public List<CommentDTO> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<CommentDTO> comments) {
+        this.comments = comments;
+    }
     
 }
